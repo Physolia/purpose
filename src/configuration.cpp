@@ -145,7 +145,6 @@ Purpose::Job* Configuration::createJob()
     job->setProperty("outputArgs", d->m_pluginType.value(QStringLiteral("X-Purpose-OutboundArguments")));
 
     connect(job, &Purpose::Job::finished, &ConfigurationPrivate::checkJobFinish);
-    connect(job, &QObject::destroyed, this, &QObject::deleteLater);
     return job;
 }
 
